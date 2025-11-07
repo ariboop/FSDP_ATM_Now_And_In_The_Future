@@ -21,6 +21,6 @@ Reminder: Documentation please.
 
 ## Installation Instructions
 before cloning and running the project, ensure you have the following prerequisites installed on your machine:
-[MongoDB Local] (https://www.mongodb.com/try/download/community)	
+[MongoDB Local](https://www.mongodb.com/try/download/community)	
 
 ## Features	
