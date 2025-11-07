@@ -22,5 +22,16 @@ Reminder: Documentation please.
 ## Installation Instructions
 before cloning and running the project, ensure you have the following prerequisites installed on your machine:
 [MongoDB Local](https://www.mongodb.com/try/download/community)	
+Express.js
+Node.js
+
+
+### highly recommended for troubleshooting
+[Postman](https://www.postman.com/downloads/) - for testing API endpoints
+[VSCode](https://code.visualstudio.com/download) - for code editing and debugging
+
+## How to Clone the Repository
 
 ## Features	
+
+[none!](https://media.tenor.com/svrKSuwrhOwAAAAj/rumia-dance.gif)
