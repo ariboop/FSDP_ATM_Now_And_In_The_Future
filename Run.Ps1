@@ -8,10 +8,23 @@ Write-Host "Starting the backend server..."
 Start-Process -NoNewWindow -FilePath "node" -ArgumentList ".\app.js"
 Write-Host "Backend server started."
 
-Write-Host "Starting the frontend server..."
-Set-Location -Path "$PSScriptRoot\my-vue-app"
-Start-Process -NoNewWindow -FilePath "npm" -ArgumentList "run serve"
-Write-Host "Frontend server started."
+# prevent vue.js from blocking the script, and open it in a new window
+Write-Host "Starting the frontend server in a new window..."
+
+Start-Process powershell.exe -ArgumentList @(
+    "-NoExit",
+    "-Command",
+    "Set-Location '$PSScriptRoot\my-vue-app'; npm.cmd run serve"
+)
+
+Write-Host "Frontend window launched."
 
 
 Write-Host "Both backend and frontend servers are running."
+
+
+Write-Host "Project running backend server... Press Ctrl+C to stop."
+
+while ($true) {
+    Start-Sleep -Seconds 1
+}
