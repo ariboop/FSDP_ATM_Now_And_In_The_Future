@@ -16,7 +16,7 @@ Write-Host "Starting the frontend server in a new window..."
 #wrap $Host.UI.RawUI.WindowTitle in '' to avoid issues with double quotes; pass down command to child, not parent
 Start-Process powershell.exe -ArgumentList @(
     '-Command',
-    '$Host.UI.RawUI.WindowTitle=''Frontend''; Set-Location ''my-vue-app''; npm.cmd run serve'
+    '$Host.UI.RawUI.WindowTitle=''Frontend''; Set-Location ''ATMpublic''; npm.cmd run serve'
 )
 Write-Host "Frontend window launched."
 
