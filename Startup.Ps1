@@ -16,6 +16,8 @@ npm install express dotenv mongoose # check with package.json for any additional
 # vue cli (check)
 Write-Host "Checking if Vue CLI is installed..."
 
+
+# :) 
 $vueExists = (Get-Command vue -ErrorAction SilentlyContinue)
 
 if ($null -eq $vueExists) {

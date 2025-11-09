@@ -1,4 +1,6 @@
 Write-Host "this file runs the frontend and backend of the project."
+Write-Host "RUN Startup.Ps1 FIRST."
+
 # Ensure you're in the root folder of the project
 Write-Host "Moving to project directory..."
 
