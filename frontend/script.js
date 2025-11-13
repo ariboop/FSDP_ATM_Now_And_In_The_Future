@@ -11,7 +11,7 @@ class WelcomeATM {
             });
         });
         document.getElementById('other-amount').addEventListener('click', () => {
-            alert('Other amount feature would open here');
+            alert('$1000');
         });
         document.querySelectorAll('.service-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -34,16 +34,6 @@ class WelcomeATM {
         alert(`Withdrawing $${amount}.`);
     }
 
-    handleServiceSelection(service) {
-        switch(service) {
-            case 'activate-card':
-                alert('Card activation service selected');
-                break;
-            case 'balance':
-                alert('Balance enquiry selected');
-                break;
-        }
-    }
 
     cancelTransaction() {
         if(confirm('Cancel current transaction?')) {
