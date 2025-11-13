@@ -7,7 +7,7 @@ Write-Host "Moving to project directory..."
 # backend server -----------------
 Set-Location -Path "$PSScriptRoot"
 Write-Host "Starting the backend server..."
-Start-Process -NoNewWindow -FilePath "node" -ArgumentList ".\app.js"
+Start-Process -NoNewWindow -FilePath "node" -ArgumentList "backend/app.js"
 Write-Host "Backend server started."
 
 # frontend server -----------------
@@ -15,10 +15,11 @@ Write-Host "Backend server started."
 # prevent vue.js from blocking the script, and open it in a new window
 Write-Host "Starting the frontend server in a new window..."
 
-#wrap $Host.UI.RawUI.WindowTitle in '' to avoid issues with double quotes; pass down command to child, not parent
+
 Start-Process powershell.exe -ArgumentList @(
+    '-NoExit',
     '-Command',
-    '$Host.UI.RawUI.WindowTitle=''Frontend''; Set-Location ''ATMpublic''; npm.cmd run serve'
+    ' Set-Location ''./frontend''; npm.cmd run serve'
 )
 Write-Host "Frontend window launched."
 
