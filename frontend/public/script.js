@@ -11,7 +11,7 @@ class WelcomeATM {
             });
         });
         document.getElementById('other-amount').addEventListener('click', () => {
-            alert('Other amount feature would open here');
+            alert('$1000');
         });
         document.querySelectorAll('.service-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
