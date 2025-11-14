@@ -30,7 +30,7 @@ if ($null -eq $vueExists) {
 
 # Frontend dependencies setup
 Write-Host "Installing frontend dependencies..."
-Set-Location -Path ".\ATMpublic"
+Set-Location -Path ".\frontend"
 npm install
 Set-Location -Path "$PSScriptRoot"
 Write-Host "Frontend dependencies installed."=
