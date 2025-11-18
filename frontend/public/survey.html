@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Survey QR Code</title>
+<link rel="stylesheet" href="survey.css" />
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-header">
+            <div class="bank-logo">
+                <img src="images/ocbc_logo.png" alt="OCBC Bank">
+            </div>
+        </div>
+    
+        <h1>Before you go</h1>
+        <p class="instructions">Please scan this qr code to help us at OCBC!</p>
+
+        <div id="qrcode"></div>
+        
+        <div class="atm-footer">
+            <div class="control-panel">
+                <div class="security-notice">
+                    <p>🔒 Your survey will always be secure</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="survey.js"></script>
+
+</body>
+</html>

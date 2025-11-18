@@ -1,0 +1,55 @@
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+.atm-container {
+    width: 800px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e1e8ed;
+}
+
+.atm-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff6b6b 100%);
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bank-logo img {
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+.atm-footer {
+    background: #f8f9fa;
+    padding: 20px 40px;
+    border-top: 1px solid #e1e8ed;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.security-notice {
+    color: #ff6b6b;
+    font-weight: 600;    
+}
+
+#qrcode {
+  margin: 20px auto;
+}
+
+.instructions {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
