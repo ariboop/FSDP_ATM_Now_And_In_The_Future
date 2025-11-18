@@ -24,7 +24,7 @@ body {
 }
 
 .atm-header {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ff6b6b 100%);
+    background: linear-gradient(135deg, #ED2722 0%, #ED2722 100%);
     color: white;
     padding: 20px 40px;
     display: flex;
@@ -42,23 +42,6 @@ body {
     font-weight: 300;
 }
 
-.atm-footer {
-    background: #f8f9fa;
-    padding: 20px 40px;
-    border-top: 1px solid #e1e8ed;
-}
-
-.control-panel {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.security-notice {
-    color: #ff6b6b;
-    font-weight: 600;    
-}
-
 .helpdesk-main {
     display: flex;
     justify-content: center;
@@ -71,7 +54,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px; /* space between grey circle, text, and red circle */
+    gap: 25px;
 }
 .large-circle {
     width: 150px;
@@ -98,7 +81,7 @@ body {
 .small-circle {
     width: 72px;
     height: 72px;
-    background: #ff4d4d;
+    background: #ED2722;
     border-radius: 50%;
     display: flex;
     justify-content: center;
