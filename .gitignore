@@ -426,3 +426,14 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+
+# Build output
+/dist/
+/build/
+/frontend/dist/
+/admin/dist/
+
+# generated from google sheets
+responses.json
+
