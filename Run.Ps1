@@ -18,13 +18,16 @@ Write-Host "Starting the frontend server in a new window..."
 #wrap $Host.UI.RawUI.WindowTitle in '' to avoid issues with double quotes; pass down command to child, not parent
 Start-Process powershell.exe -ArgumentList @(
     '-Command',
-    '$Host.UI.RawUI.WindowTitle=''Frontend''; Set-Location ''ATMpublic''; npm.cmd run serve'
+    '$Host.UI.RawUI.WindowTitle=''Frontend''; Set-Location ''frontend''; npm.cmd run serve'
 )
 Write-Host "Frontend window launched."
 
 
 Write-Host "Both backend and frontend servers are running."
 
+Write-Host "starting form API."
+node backend\update-responses.mjs # run once to update form responses from google forms
+# that line is a bandaid
 
 Write-Host "Project running backend server... Press Ctrl+C to stop."
 
