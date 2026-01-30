@@ -157,8 +157,8 @@ body {
 
 .header-translate {
     position: absolute;
-    right: 60px;
-    top: 20%;
+    right: 10px;
+    top: 10%;
     transform: translateY(-50%);
 }
 

@@ -14,7 +14,9 @@
             </div>
             <h1>Cash Withdrawal</h1>
         </div>
-
+        <div class="header-translate">
+            <div id="google_translate_element"></div>
+        </div>
         <div class="withdrawal-container">
             <!-- Amount Selection -->
             <div class="step-section active" id="step-amount">
@@ -267,56 +269,7 @@
                         <div class="success-icon">✅</div>
                         <h2>Cash Withdrawn Successfully!</h2>
                         <p>Please collect your cash from the dispenser.</p>
-                    </div>
-                    
-                    <div class="receipt-container">
-                        <div class="receipt">
-                            <div class="receipt-header">
-                                <h3>OCBC BANK</h3>
-                                <p>Cash Withdrawal Receipt</p>
-                                <small id="receipt-time"></small>
-                            </div>
-                            
-                            <div class="receipt-details">
-                                <div class="receipt-item">
-                                    <span>Transaction ID:</span>
-                                    <span id="receipt-id">OCBC-CW-20241215-001</span>
-                                </div>
-                                <div class="receipt-item">
-                                    <span>Amount:</span>
-                                    <span id="receipt-amount">$0</span>
-                                </div>
-                                <div class="receipt-item">
-                                    <span>Account:</span>
-                                    <span id="receipt-account">Savings Account</span>
-                                </div>
-                            </div>
-                            
-                            <div class="note-breakdown">
-                                <h5>Note Breakdown</h5>
-                                <div class="breakdown-grid" id="receipt-breakdown">
-                                    <!-- Final note breakdown will be shown here -->
-                                </div>
-                                <div class="breakdown-total">
-                                    <span>Total:</span>
-                                    <span id="receipt-total">$0</span>
-                                </div>
-                            </div>
-                            
-                            <div class="new-balance">
-                                <div class="balance-item">
-                                    <span>New Account Balance:</span>
-                                    <span id="new-balance">$12,450.75</span>
-                                </div>
-                            </div>
-                            
-                            <div class="receipt-footer">
-                                <p>Thank you for banking with OCBC</p>
-                                <small>Keep this receipt for your records</small>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    </div>                    
                     <div class="success-actions">
                         <button class="btn-primary" id="print-receipt">Print Receipt</button>
                         <button class="btn-secondary" id="new-withdrawal">Make Another Withdrawal</button>
