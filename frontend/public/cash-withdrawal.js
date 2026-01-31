@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('confirm-withdrawal').addEventListener('click', processWithdrawal);
         document.getElementById('back-to-amount').addEventListener('click', goToAmount);
         document.getElementById('back-to-note-type').addEventListener('click', goToNoteTypeFromConfirm);
-        document.getElementById('print-receipt').addEventListener('click', printReceipt);
         document.getElementById('new-withdrawal').addEventListener('click', resetWithdrawal);
         
         // Prevent invalid amounts
@@ -168,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function setupQuickAmounts() {
-        // Quick amounts are already set up
     }
     
     function setWithdrawalAmount(amount) {
@@ -454,9 +452,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update account balance
             withdrawalData.accountBalances[withdrawalData.account] -= withdrawalData.amount;
             
-            // Generate receipt
-            updateReceipt();
-            
             // Show success screen
             updateStep('step-success');
             
@@ -465,69 +460,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     }
     
-    function updateReceipt() {
-        // Set receipt time
-        const now = new Date();
-        document.getElementById('receipt-time').textContent = 
-            now.toLocaleString('en-SG', { 
-                day: '2-digit', 
-                month: 'short', 
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-        
-        // Set receipt details
-        document.getElementById('receipt-id').textContent = withdrawalData.transactionId;
-        document.getElementById('receipt-amount').textContent = `$${withdrawalData.amount}`;
-        document.getElementById('receipt-account').textContent = 
-            withdrawalData.account === 'savings' ? 'Savings Account' : 'Current Account';
-        document.getElementById('receipt-total').textContent = `$${withdrawalData.amount}`;
-        document.getElementById('new-balance').textContent = 
-            `$${withdrawalData.accountBalances[withdrawalData.account].toFixed(2)}`;
-        
-        // Update note breakdown in receipt
-        const receiptBreakdown = document.getElementById('receipt-breakdown');
-        receiptBreakdown.innerHTML = '';
-        
-        let totalNotes = 0;
-        denominations.forEach(denomination => {
-            const count = withdrawalData.noteBreakdown[denomination];
-            if (count > 0) {
-                totalNotes += count;
-                const breakdownItem = document.createElement('div');
-                breakdownItem.className = 'breakdown-item';
-                breakdownItem.innerHTML = `
-                    <span class="breakdown-denomination">$${denomination}</span>
-                    <span class="breakdown-count">${count}</span>
-                `;
-                receiptBreakdown.appendChild(breakdownItem);
-            }
-        });
-        
-        // Add total notes count
-        const totalItem = document.createElement('div');
-        totalItem.className = 'breakdown-item';
-        totalItem.style.gridColumn = '1 / -1';
-        totalItem.innerHTML = `
-            <span class="breakdown-denomination">Total Notes:</span>
-            <span class="breakdown-count">${totalNotes}</span>
-        `;
-        receiptBreakdown.appendChild(totalItem);
-    }
-    
-    function printReceipt() {
-        const receipt = document.querySelector('.receipt');
-        const originalContent = document.body.innerHTML;
-        
-        document.body.innerHTML = receipt.outerHTML;
-        window.print();
-        document.body.innerHTML = originalContent;
-        
-        // Re-initialize event listeners
-        initializePage();
-        updateStep('step-success');
-    }
     
     function resetWithdrawal() {
         // Reset withdrawal data
@@ -647,7 +579,7 @@ function addModalStyles() {
         }
         
         .modal-header {
-            background: linear-gradient(135deg, #0047ab, #0066cc);
+            background: linear-gradient(135deg, #ED2722);
             color: white;
             padding: 20px 25px;
             border-radius: 15px 15px 0 0;
@@ -708,7 +640,7 @@ function addModalStyles() {
             width: 50px;
             height: 50px;
             border: 5px solid #f3f3f3;
-            border-top: 5px solid #0047ab;
+            border-top: 5px solid #ED2722;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto;
