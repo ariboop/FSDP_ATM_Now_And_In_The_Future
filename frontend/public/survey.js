@@ -35,4 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     qrcodeDiv.innerHTML = `<img src="${url}" alt="QR Code" />`;
     console.log('QR code generated!');
   });
+
+
 });

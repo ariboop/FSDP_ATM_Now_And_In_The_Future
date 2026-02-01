@@ -28,13 +28,27 @@ app.use(cors());
 app.use("/api/users", userRoutes); // http://localhost:3000/api/users ROUTES TO THIS ONE, PLEASE
 
 
-// connect to mongodb using mongoose
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.error("MongoDB connection error:", err));
+// connect to mongodb using mongoose — optional and non-fatal
+;(async function connectMongo() {
+  const uri = process.env.MONGO_URI || process.env.MONGO_URL;
+  if (!uri || process.env.DISABLE_MONGO === '1') {
+    console.log('MongoDB disabled or MONGO_URI not set — using file-backed/demo storage only.');
+    return;
+  }
+
+  try {
+    // Do a short server-selection timeout so startup is fast when Mongo is not available.
+    // Note: do NOT pass legacy options like useNewUrlParser/useUnifiedTopology (they're ignored)
+    await mongoose.connect(uri, { serverSelectionTimeoutMS: 5000 });
+    console.log('Connected to MongoDB');
+  } catch (err) {
+    // Log concise, actionable message (avoid dumping a full stack to the user console)
+    console.warn('MongoDB connection failed (optional). Continuing with file-backed storage.');
+    if (process.env.DEBUG || process.env.NODE_ENV === 'development') {
+      console.debug('Mongo connection error:', err && err.message ? err.message : err);
+    }
+  }
+})();
 
 
 
@@ -54,8 +68,14 @@ app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
 process.on("SIGINT", async () => {
     console.log("Server is gracefully shutting down");
-    await sql.close();
-    console.log("Database connections closed");
+    try {
+      if (typeof sql !== 'undefined' && sql && typeof sql.close === 'function') {
+        await sql.close();
+        console.log("Database connections closed");
+      }
+    } catch (err) {
+      console.warn('Error while closing DB connection (ignored):', err && err.message);
+    }
     process.exit(0);
 });
 
