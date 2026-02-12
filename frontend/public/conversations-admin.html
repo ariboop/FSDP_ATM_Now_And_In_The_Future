@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Conversations — Admin (Stored responses)</title>
+  <link rel="stylesheet" href="conversations-admin.css">
+</head>
+<body>
+  <div class="admin-root">
+    <header class="admin-header">
+      <div class="bank-logo"><img src="images/ocbc_logo.png" alt="OCBC"></div>
+      <div class="title">Stored conversations (live)</div>
+      <div class="controls">
+        <label for="searchInput">Search:</label>
+        <input id="searchInput" placeholder="keyword or intent" />
+        <label for="interval">Poll:</label>
+        <input id="interval" type="number" min="1" value="3" style="width:68px">s
+        <button id="togglePoll">Start</button>
+        <button id="refreshBtn">Refresh</button>
+        <button id="exportJson">Export JSON</button>
+      </div>
+    </header>
+
+    <div class="admin-container">
+      <aside class="sessions-sidebar">
+        <h4>Sessions</h4>
+        <div id="sessionsList" class="sessions-list"></div>
+      </aside>
+
+      <main class="admin-main">
+        <section class="stats" aria-live="polite"></section>
+        <section class="stream" id="stream" role="log" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div class="footer">Developer tools: <small>Click a session to view its conversation log.</small></div>
+  </div>
+
+  <script src="conversations-admin.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ Write-Host "Working directory set to project root: $PSScriptRoot"
 
 # npm packages setup (if applicable)
 Write-Host "Installing required npm packages..."
-npm install express dotenv mongoose # check with package.json for any additional dependencies
+npm install express dotenv mongoose cors axios googleapi# check with package.json for any additional dependencies
 
 # vue cli (check)
 Write-Host "Checking if Vue CLI is installed..."
@@ -30,7 +30,7 @@ if ($null -eq $vueExists) {
 
 # Frontend dependencies setup
 Write-Host "Installing frontend dependencies..."
-Set-Location -Path ".\ATMpublic"
+Set-Location -Path ".\frontend"
 npm install
 Set-Location -Path "$PSScriptRoot"
 Write-Host "Frontend dependencies installed."=
@@ -59,3 +59,4 @@ Write-Host " To exit the terminal, press: Ctrl + C"
 while ($true) {
     Start-Sleep -Seconds 1
 }
+

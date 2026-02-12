@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCBC ATM - Transfer Confirmation</title>
+    <link rel="stylesheet" href="confirmstyle.css">
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-header">
+            <div class="bank-logo">
+                <img src="images/ocbc_logo.png" alt="OCBC Bank">
+            </div>
+            <div class="atm-title">Transfer Confirmation</div>
+        </div>
+        <div class="header-translate">
+            <div id="google_translate_element"></div>
+        </div>
+        <div class="atm-main">
+            <div class="confirmation-card">
+                <h1># Transfer Confirmation</h1>
+                
+                <div class="details-grid">
+                    <div class="detail-row">
+                        <span class="label">Amount</span>
+                        <span class="value amount">$24.10</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="label recipient">JOHN DOE</span>
+                        <span class="value account">125 60000-00</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="label"></span>
+                        <span class="value branch">CTL - 5G</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="label">Payment mode</span>
+                        <span class="value mode">Non - immediate transfer</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="confirm-btn" onclick="processTransfer()">
+                        Confirm
+                    </button>
+                    <button class="cancel-btn" onclick="window.location.href='morenoncashservice.html'">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+            
+            // Remove Google branding frame after load
+            setTimeout(function() {
+                var frame = document.querySelector('.goog-te-banner-frame');
+                if (frame) frame.style.display = 'none';
+                document.body.style.top = '0px';
+            }, 500);
+        }
+    </script>
+    
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Survey QR Code</title>
+<link rel="stylesheet" href="survey.css" />
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-header">
+            <div class="bank-logo">
+                <img src="images/ocbc_logo.png" alt="OCBC Bank">
+            </div>
+        </div>
+    <div class="header-translate">
+        <div id="google_translate_element"></div>
+    </div>
+    <div class="title-row">
+        <button class="leave-btn" onclick="window.location.href = 'index.html'">
+            <img src="images/back-arrow.png" alt="" class="btn-icon">
+        </button>
+
+        <h1>Before you go</h1>
+    </div>
+        <p class="instructions">Please scan this qr code to help us at OCBC!</p>
+
+        <div id="qrcode"></div>
+
+    </div>
+
+<script src="survey.js"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+        
+        setTimeout(function() {
+            var frame = document.querySelector('.goog-te-banner-frame');
+            if (frame) frame.style.display = 'none';
+            document.body.style.top = '0px';
+        }, 500);
+    }
+</script>
+    
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

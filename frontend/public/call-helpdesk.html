@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCBC ATM - Confirm</title>
+    <link rel="stylesheet" href="callhelpdesk.css">
+</head>
+<body>
+    <div class="atm-container">
+
+        <div class="atm-header">
+            <div class="bank-logo">
+                <img src="images/ocbc_logo.png" alt="OCBC Bank">
+            </div>
+        </div>
+        <div class="header-translate">
+            <div id="google_translate_element"></div>
+        </div>
+        <div class="helpdesk-main">
+            <div class="circle-wrapper">
+                <div class="large-circle">
+                    <img src="images/ocbc-bank-full-logo.png" alt="Helpdesk" />
+                </div>
+
+                <div class="helpdesk-location">
+                    OCBC CENTRAL BRANCH
+                </div>
+
+                <div class="small-circle" onclick="window.location.href='survey.html'">
+                    <img src="images/end-call.png">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Inactivity Popup Modal -->
+        <div id="inactivityModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <p>No activity detected. Would you like to connect with our helpdesk?</p>
+                <div class="modal-buttons">
+                    <button id="yesBtn" onclick="window.location.href='conversations-admin.html'">Yes, Connect</button>
+                    <button id="noBtn" onclick="closeModal()">No, Continue</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+            
+            // Remove Google branding frame after load
+            setTimeout(function() {
+                var frame = document.querySelector('.goog-te-banner-frame');
+                if (frame) frame.style.display = 'none';
+                document.body.style.top = '0px';
+            }, 500);
+        }
+    </script>
+    
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>

@@ -1,0 +1,37 @@
+:root{--bg:#0b1220;--panel:#0f1724;--muted:#9aa4b2;--accent:#ef4444;--glass:rgba(255,255,255,0.03)}
+*{box-sizing:border-box;font-family:Inter,Segoe UI,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial}
+body{margin:0;background:linear-gradient(180deg,#071029 0%,#071427 100%);color:#e6eef8}
+.admin-root{max-width:1100px;margin:28px auto;padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+.admin-header{display:flex;gap:18px;align-items:center}
+.admin-header .bank-logo img{height:32px}
+.admin-header .title{font-weight:700;font-size:18px;color:#fff;margin-right:auto}
+.controls{display:flex;gap:8px;align-items:center}
+.controls label{color:var(--muted);font-size:13px}
+.controls input, .controls select{background:var(--panel);border:1px solid rgba(255,255,255,0.03);color:#dbeafe;padding:6px 8px;border-radius:6px}
+.controls button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:6px 10px;border-radius:6px;cursor:pointer}
+.controls button.polling-active{background:linear-gradient(135deg,#10b981 0%,#059669 100%);border-color:#059669;color:white;animation:pulse-glow 2s ease-in-out infinite}
+@keyframes pulse-glow{0%{box-shadow:0 0 0 0 rgba(16,185,129,0.7)}70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+.admin-container{display:flex;gap:18px;margin-top:18px;flex:1}
+.sessions-sidebar{flex:0 0 220px;background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:14px;overflow-y:auto;max-height:500px}
+.sessions-sidebar h4{margin:0 0 12px 0;font-size:12px;color:#93c5fd;text-transform:uppercase;letter-spacing:0.05em}
+.sessions-list{display:flex;flex-direction:column;gap:8px}
+.session-item{padding:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;cursor:pointer;transition:all 0.2s ease;font-size:13px;user-select:none;color:#cbd5e1}
+.session-item:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.session-item.active{background:linear-gradient(135deg,#FF3333 0%,#CC0000 100%);color:white;border-color:#CC0000;font-weight:bold}
+.session-item-title{display:block;margin-bottom:4px;word-break:break-word}
+.session-item-count{display:block;font-size:12px;opacity:0.8}
+.admin-main{display:flex;gap:18px;flex:1;flex-direction:column}
+.stream{flex:1;min-height:420px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);overflow:auto}
+.stream .msg{display:flex;gap:12px;padding:10px;border-radius:8px;margin-bottom:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.015)}
+.stream .msg.user{border-left:4px solid #60a5fa}
+.stream .msg.assistant{border-left:4px solid #fb7185}
+.msg .meta{min-width:120px;color:var(--muted);font-size:13px}
+.msg .body{flex:1}
+.msg .body .text{color:#e6eef8;margin-bottom:8px}
+.msg .body .meta2{color:var(--muted);font-size:13px}
+.sidebar{width:300px;padding:14px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:8px;border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:14px}
+.stats{margin-top:6px;color:var(--muted);font-size:13px}
+.footer{margin-top:14px;color:var(--muted);font-size:13px}
+.btn-link{background:transparent;border:0;color:#93c5fd;cursor:pointer}
+code{background:var(--glass);padding:2px 6px;border-radius:6px;color:#cbd5e1}
+.empty{color:var(--muted);padding:28px;text-align:center;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}

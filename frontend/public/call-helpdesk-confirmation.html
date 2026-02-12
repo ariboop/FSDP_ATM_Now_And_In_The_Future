@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCBC ATM - Confirm</title>
+    <link rel="stylesheet" href="callhelpdeskconfirmation.css">
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-header">
+            <div class="bank-logo">
+                <img src="images/ocbc_logo.png" alt="OCBC Bank">
+            </div>
+            <div class="helpdesk-title">Call Helpdesk</div>
+        </div>
+        <div class="header-translate">
+            <div id="google_translate_element"></div>
+        </div>
+        <div class="helpdesk-main">
+            <div class="helpdesk-confirmation">
+                <div class="helpdesk-content-title">
+                    You are about to call OCBC Helpdesk  
+                </div>
+                <div class="helpdesk-title-followup">
+                    Would you like to proceed?
+                </div>
+                <div class="confirm-button">
+                    <div class="confirm-button-content"onclick="window.location.href = 'call-helpdesk.html'">
+                        Yes
+                    </div>
+                </div>
+                <div class= "cancel-button" onclick="window.location.href= 'index.html'"> 
+                    <div class="cancel-button-content">
+                        No
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+            
+            // Remove Google branding frame after load
+            setTimeout(function() {
+                var frame = document.querySelector('.goog-te-banner-frame');
+                if (frame) frame.style.display = 'none';
+                document.body.style.top = '0px';
+            }, 500);
+        }
+    </script>
+    
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
